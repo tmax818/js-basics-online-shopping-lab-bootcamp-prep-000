@@ -10,12 +10,27 @@ function setCart(c) {
 }
 
 function addToCart(item) {
- // write your code here
+  const itemName = item;
+  const itemPrice = Math.floor(Math.random()*100);
+ var itemObj = { [itemName]: itemPrice };
+ cart.push(itemObj);
+ console.log(`${itemName} has been added to your cart.`);
+ return cart;
 }
 
 function viewCart() {
-  // write your code here
+  var keys = Object.keys(cart);
+  var keysArray = [];
+  if(cart.length > 0) {
+    for(var i = 0; i < cart.length; i++){
+      keysArray.push(`${keys[i]} at $${cart.keys}`);
+    }
+    console.log(`In you cart, you have ${keysArray.join(' ')}`);
+  } else {
+    console.log( "Your shopping cart is empty.");
+  }
 }
+
 
 function total() {
   // write your code here
